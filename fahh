@@ -1,0 +1,43 @@
+local AcrylicLibrary = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Acrylic/refs/heads/main/source", true))();
+local TextEffect = AcrylicLibrary.TextEffect;
+
+local Window = AcrylicLibrary:CreateWindow({
+	Title = string.format("Acrylic Library - %s" , TextEffect:AddColor(AcrylicLibrary.Version, AcrylicLibrary.Colors.Hightlight)),
+	Logo = "rbxassetid://7733752630",
+	Keybind = Enum.KeyCode.LeftControl,
+})
+
+local Tab = Window:AddTab({
+	Title = "Example",
+	Icon = "library"
+})
+
+Tab:AddParagraph({
+	Title = "Paragraph",
+	Description = AcrylicLibrary:HightlightSource([[
+local X = 15;
+
+for I = 1 , X do
+	print(I);
+end;
+]])
+})
+
+Tab:AddTextbox({
+	Title = "Textbox",
+	Default = "Hello, World",
+	PlaceHolder = "Placeholder",
+	Numeric = false,
+	Callback = function(value)
+		print(value)
+	end,
+})
+
+Tab:AddToggle({
+	Title = "Toggle",
+	Tip = "Click Me!",
+	Default = false,
+	Callback = function(value)
+		print(value);
+	end,
+})
